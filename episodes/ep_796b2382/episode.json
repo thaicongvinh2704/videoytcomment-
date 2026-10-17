@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "ep_796b2382",
+  "title": "Tap 02: Nhung chiec comment bat on",
+  "background": "input/background.mp4",
+  "background_info": {
+    "width": 1080,
+    "height": 1920,
+    "duration": 30.0,
+    "has_audio": false
+  },
+  "mode": "ai_directed",
+  "approved": true,
+  "rights_confirmed": true,
+  "ai_disclosure_reviewed": true,
+  "beats": [
+    {
+      "comment": "input/comments/01_01_comment_di_dao.png",
+      "woman": "input/women/01_real_01_elegant.jpg",
+      "meme": "",
+      "emotion": "curious",
+      "caption": "Đi dạo sương sương thôi mà lộng lẫy thế này?",
+      "hold": 2.0,
+      "reveal": 3.5,
+      "reaction": 0
+    },
+    {
+      "comment": "input/comments/02_02_comment_gap_nguoi_yeu_cu.png",
+      "woman": "input/women/02_real_02_chic.jpg",
+      "meme": "input/memes/01_03_sigma_face.png",
+      "emotion": "surprise",
+      "caption": "Gặp lại người yêu cũ là tuyệt đối không được thua!",
+      "hold": 1.8,
+      "reveal": 3.2,
+      "reaction": 1.2
+    },
+    {
+      "comment": "input/comments/03_04_comment_crush.png",
+      "woman": "input/women/03_real_03_white_dress.jpg",
+      "meme": "",
+      "emotion": "warm",
+      "caption": "Story thế này thì tim đập 200 lần là còn nhẹ!",
+      "hold": 1.8,
+      "reveal": 3.5,
+      "reaction": 0
+    },
+    {
+      "comment": "input/comments/04_05_comment_gym.png",
+      "woman": "input/women/04_real_04_gym.jpg",
+      "meme": "input/memes/02_01_bruh_moment.png",
+      "emotion": "punchline",
+      "caption": "Tập gym 15 phút, sống ảo 2 tiếng là có thật!",
+      "hold": 2.0,
+      "reveal": 3.5,
+      "reaction": 1.5
+    }
+  ],
+  "music": "",
+  "voice": "",
+  "note": "AI Directed: Đã khớp 4 ảnh chụp chân thực chất lượng cao với các bình luận tình huống, nền ấm áp dễ chịu, nhịp hài tăng dần."
+}

@@ -1,0 +1,13 @@
+{
+  "output": "preview.mp4",
+  "quality": "preview",
+  "expected_seconds": 29.6,
+  "actual_seconds": 29.6,
+  "plan_hash": "420cd50ec8d1bbfebd19bda2ea3835c50899da95ea345e3307e77b593ac0383d",
+  "width": 540,
+  "height": 960,
+  "audio": true,
+  "scenes": 8,
+  "technical_pass": true,
+  "editorial_review_required": true
+}

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shorts Comment AI Studio</title>
+<style>
+  :root{color-scheme:dark;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#0c1020;color:#f4f5fb}
+  *{box-sizing:border-box}body{margin:0}main{max-width:1440px;margin:auto;padding:24px 28px 80px}
+  header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2a3249;padding-bottom:18px;margin-bottom:24px}
+  h1{font-size:24px;margin:0}.tag{color:#92f1d3;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
+  .grid{display:grid;grid-template-columns:minmax(480px,1fr) 360px;gap:24px;align-items:start}
+  section,.beat{background:#171d2f;border:1px solid #343c53;border-radius:16px;padding:20px;margin-bottom:18px}
+  h2{font-size:18px;margin:0 0 16px}h3{font-size:15px;margin:0;color:#e8ebfa}.muted,small{color:#aeb8ca}
+  label{display:block;color:#d4daeb;font-size:13px;font-weight:650;margin-bottom:11px}
+  input,select,textarea,button{font:inherit}input[type=text],input[type=number],select,textarea{width:100%;color:#f3f4fa;background:#0e1424;border:1px solid #46516b;padding:10px 11px;border-radius:9px;margin-top:5px}
+  input[type=file]{display:block;width:100%;margin-top:6px;color:#bbc6dc}textarea{resize:vertical;min-height:72px}
+  button{cursor:pointer;color:#ecf5ff;background:#313b59;border:1px solid #546580;border-radius:10px;padding:10px 14px}
+  button:hover{background:#455676}button:disabled{opacity:.48;cursor:not-allowed}
+  button.primary{background:#1a947b;border-color:#37b398;color:white;font-weight:700}button.primary:hover{background:#27a98d}
+  button.accent{background:#6750b7;border-color:#9d83ef}.actions{display:flex;flex-wrap:wrap;gap:9px;margin:10px 0 18px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.triple{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .beatTop{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.beatTop button{padding:5px 8px;font-size:12px}
+  .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.thumbs img{width:100%;height:130px;object-fit:contain;background:#0c1020;border-radius:8px;border:1px solid #414c68}
+  .videoBox{position:sticky;top:18px}.videoBox video{width:100%;max-height:660px;background:black;border-radius:12px;border:1px solid #44506d}
+  #status{min-height:50px;background:#101827;padding:11px 13px;border-radius:9px;white-space:pre-wrap;color:#b8ddf7;line-height:1.45}
+  .checkbox{display:flex;gap:10px;align-items:flex-start;font-weight:500}.checkbox input{margin-top:3px}
+  a{color:#93e8d0}#editor{display:none}.hint{padding:11px;background:#242b40;border-radius:10px;color:#c3d4e9}
+  @media(max-width:980px){main{padding:15px}.grid{grid-template-columns:1fr}.videoBox{position:static}.thumbs img{height:100px}}
+</style></head><body><main>
+<header><div><div class="tag">Local studio • Windows</div><h1>Shorts Comment AI Studio</h1></div><div class="muted">Ảnh → nhịp → preview → final</div></header>
+<div class="grid"><div>
+<section><h2>1. Tạo tập mới</h2>
+ <form id="createForm">
+  <label>Tên/tình huống của tập<input name="title" type="text" value="Tập mới: một bình luận, một cú lật" maxlength="100"></label>
+  <label>Clip nền (1 video)<input name="background" type="file" accept="video/*,.mkv" required></label>
+  <div class="row"><label>Ảnh bình luận (nhiều ảnh)<input name="comments" type="file" accept="image/*" multiple required></label>
+  <label>Ảnh nhân vật nữ (nhiều ảnh)<input name="women" type="file" accept="image/*" multiple required></label></div>
+  <label>Meme/clip phản ứng (tuỳ chọn)<input name="memes" type="file" accept="image/*,video/*,.mkv" multiple></label>
+  <div class="row"><label>Lời bình/voice (tuỳ chọn)<input name="voice" type="file" accept="audio/*"></label>
+  <label>Nhạc nền (tuỳ chọn)<input name="music" type="file" accept="audio/*"></label></div>
+  <button class="primary" type="submit">Tạo tập và ghép bản nháp</button>
+ </form><p class="muted">Bản nháp theo thứ tự tên file. AI Director sẽ xem ảnh và ghép lại theo nội dung khi có API key.</p>
+ <label>Mở tập đã có<select id="episodes"><option value="">— Chọn tập —</option></select></label>
+</section>
+<div id="editor"><section><h2>2. AI Director và duyệt nhịp</h2>
+ <div class="actions"><button class="accent" id="aiBtn">AI xem ảnh và đạo diễn</button><button id="orderedBtn">Ghép lại theo thứ tự</button><button id="saveBtn">Lưu chỉnh sửa</button><button id="previewBtn" class="primary">Render preview</button></div>
+ <p id="directorNote" class="hint"></p><div id="beats"></div>
+ <div class="actions"><button id="addBeat">+ Thêm lượt</button><button id="saveBottom">Lưu chỉnh sửa</button></div>
+</section><section><h2>3. Duyệt và xuất</h2>
+ <label class="checkbox"><input type="checkbox" id="rights">Tôi có quyền sử dụng clip nền, ảnh, meme và âm thanh trong tập.</label>
+ <label class="checkbox"><input type="checkbox" id="disclosure">Tôi đã kiểm tra mục khai báo AI khi đăng YouTube (ảnh người AI trông chân thực).</label>
+ <label class="checkbox"><input type="checkbox" id="approve">Tôi đã xem preview và duyệt nội dung, chữ, âm thanh.</label>
+ <div class="actions"><button class="primary" id="finalBtn">Xuất final 1080×1920</button></div>
+ <small>Studio chỉ kiểm tra kỹ thuật tự động. Bạn là người duyệt cảm xúc, quyền nguồn và đăng video.</small>
+</section></div>
+</div><aside class="videoBox"><section><h2>Preview</h2><video id="player" controls playsinline></video>
+ <div class="actions"><a id="download" href="#" download style="display:none">Tải video</a> <a id="brief" href="#" target="_blank" style="display:none">Mở brief cho AntiGravity</a></div>
+ <div id="status">Tạo tập mới để bắt đầu.</div>
+ <p class="muted">Đường dẫn video và tập được lưu trên máy của bạn. Preview render 540×960; final 1080×1920.</p>
+ </section></aside></div></main>
+<script>
+let current=null, assetList=null, hasPreview=false;
+const $=id=>document.getElementById(id);
+const media=(p)=>'/media/'+encodeURIComponent(current.id)+'/'+p.split('/').map(encodeURIComponent).join('/');
+function status(s){$('status').textContent=s}
+async function api(url,body){let r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});let d=await r.json();if(!r.ok)throw Error(d.error||'Lỗi máy chủ');return d}
+function error(e){status('Lỗi: '+e.message);console.error(e)}
+async function episodes(){let r=await fetch('/api/episodes');let list=await r.json();$('episodes').innerHTML='<option value="">— Chọn tập —</option>'+list.map(e=>`<option value="${e.id}">${escapeHtml(e.title)} (${e.id})</option>`).join('')}
+function escapeHtml(x){return String(x||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+async function openEpisode(id){let r=await fetch('/api/episode?id='+encodeURIComponent(id));let d=await r.json();if(d.error)throw Error(d.error);current=d.doc;assetList=d.assets;hasPreview=d.preview;$('editor').style.display='block';$('episodes').value=id;
+ $('rights').checked=!!current.rights_confirmed;$('disclosure').checked=!!current.ai_disclosure_reviewed;$('approve').checked=!!current.approved;
+ $('directorNote').textContent=current.mode==='ai_directed'?'AI Director: '+current.note:'Bản ghép theo thứ tự file. Xem từng ảnh để chỉnh ghép và điểm nhấn. '+(current.note||'');
+ $('brief').href=media('DIRECTOR_BRIEF.md');$('brief').style.display='inline';renderBeats();
+ if(d.preview){$('player').src=media('preview.mp4')+'?v='+Date.now();$('download').href=media('preview.mp4');$('download').style.display='inline'}
+ status('Đã mở '+id+(d.preview?' — đã có preview.':' — hãy xem/sửa các lượt rồi render preview.'))}
+function option(paths,chosen){return paths.map(p=>`<option value="${escapeHtml(p)}" ${p===chosen?'selected':''}>${escapeHtml(p.split('/').at(-1))}</option>`).join('')}
+function renderBeats(){let html=current.beats.map((b,i)=>`<article class="beat" data-beat="${i}">
+ <div class="beatTop"><h3>Lượt ${i+1} · ${escapeHtml(b.emotion)}</h3><div><button class="up">↑</button> <button class="down">↓</button> <button class="remove">Xoá</button></div></div>
+ <div class="thumbs"><img src="${media(b.comment)}" title="Bình luận"><img src="${media(b.woman)}" title="Nhân vật"><img src="${b.meme?media(b.meme):''}" title="Meme"></div>
+ <div class="row"><label>Ảnh bình luận<select data-key="comment">${option(assetList.comments,b.comment)}</select></label><label>Ảnh nhân vật<select data-key="woman">${option(assetList.women,b.woman)}</select></label></div>
+ <div class="row"><label>Meme<select data-key="meme"><option value="">Không có</option>${option(assetList.memes,b.meme)}</select></label><label>Cảm xúc<select data-key="emotion">${['curious','warm','surprise','awkward','punchline'].map(x=>`<option value="${x}" ${x===b.emotion?'selected':''}>${x}</option>`).join('')}</select></label></div>
+ <label>Caption / câu nhấn<textarea data-key="caption" maxlength="120">${escapeHtml(b.caption)}</textarea></label>
+ <div class="triple"><label>Đọc (giây)<input data-key="hold" type="number" min="0.8" max="8" step="0.1" value="${b.hold}"></label>
+ <label>Hé lộ (giây)<input data-key="reveal" type="number" min="1.5" max="8" step="0.1" value="${b.reveal}"></label>
+ <label>Meme (giây)<input data-key="reaction" type="number" min="0" max="8" step="0.1" value="${b.reaction}"></label></div></article>`).join('');$('beats').innerHTML=html;
+ document.querySelectorAll('.beat').forEach(node=>{let i=+node.dataset.beat;
+  node.querySelectorAll('[data-key]').forEach(el=>el.onchange=()=>{let key=el.dataset.key;current.beats[i][key]=['hold','reveal','reaction'].includes(key)?Number(el.value):el.value; if(['comment','woman','meme'].includes(key))renderBeats()});
+  node.querySelector('.up').onclick=()=>move(i,-1);node.querySelector('.down').onclick=()=>move(i,1);node.querySelector('.remove').onclick=()=>{if(current.beats.length<2){status('Cần ít nhất một lượt');return}current.beats.splice(i,1);renderBeats()};})}
+function move(i,delta){let j=i+delta;if(j<0||j>=current.beats.length)return;[current.beats[i],current.beats[j]]=[current.beats[j],current.beats[i]];renderBeats()}
+async function save(){current.approved=$('approve').checked;current.rights_confirmed=$('rights').checked;current.ai_disclosure_reviewed=$('disclosure').checked;await api('/api/save',{id:current.id,doc:current});status('Đã lưu chỉnh sửa tập '+current.id)}
+async function startRender(quality){await save();let d=await api('/api/render',{id:current.id,quality});status('Đang dựng '+quality+'...');let timer=setInterval(async()=>{try{let r=await fetch('/api/job?job='+d.job);let j=await r.json();status(j.status==='error'?'Lỗi: '+j.message:'Đang dựng: '+j.message);if(j.status==='done'||j.status==='error'){clearInterval(timer);if(j.status==='done'){let f=quality==='preview'?'preview.mp4':'final_1080x1920.mp4';$('player').src=media(f)+'?v='+Date.now();$('download').href=media(f);$('download').download=f;$('download').style.display='inline';hasPreview=true;status('QC kỹ thuật PASS. '+f+' — '+j.report.actual_seconds+' giây. Hãy xem lại toàn bộ video.')}}}catch(e){clearInterval(timer);error(e)}},1100)}
+$('createForm').onsubmit=async e=>{e.preventDefault();status('Đang nhập tài sản...');try{let r=await fetch('/api/create',{method:'POST',body:new FormData(e.target)});let d=await r.json();if(!r.ok)throw Error(d.error);await episodes();await openEpisode(d.id)}catch(e){error(e)}};
+$('episodes').onchange=e=>{if(e.target.value)openEpisode(e.target.value).catch(error)};
+$('aiBtn').onclick=async()=>{try{status('AI đang xem ảnh và sắp nhịp; có thể mất 1–3 phút...');let d=await api('/api/direct',{id:current.id,mode:'ai'});await openEpisode(d.doc.id)}catch(e){error(e)}};
+$('orderedBtn').onclick=async()=>{try{let d=await api('/api/direct',{id:current.id,mode:'ordered'});await openEpisode(d.doc.id)}catch(e){error(e)}};
+$('saveBtn').onclick=()=>save().catch(error);$('saveBottom').onclick=()=>save().catch(error);
+$('previewBtn').onclick=()=>startRender('preview').catch(error);
+$('finalBtn').onclick=()=>startRender('final').catch(error);
+$('addBeat').onclick=()=>{current.beats.push({comment:assetList.comments[0],woman:assetList.women[0],meme:'',emotion:'curious',caption:'',hold:1.8,reveal:3.8,reaction:0});renderBeats()};
+episodes().catch(error);
+</script></body></html>

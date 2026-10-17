@@ -1,0 +1,13 @@
+{
+  "output": "final_1080x1920.mp4",
+  "quality": "final",
+  "expected_seconds": 24.1,
+  "actual_seconds": 24.1,
+  "plan_hash": "2c3936a71625f8750477160f1bd1b9cfa4d474c3181e3d809cb619202553e470",
+  "width": 1080,
+  "height": 1920,
+  "audio": true,
+  "scenes": 10,
+  "technical_pass": true,
+  "editorial_review_required": true
+}

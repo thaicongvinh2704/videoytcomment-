@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Video & Heavy Render Caches (GitHub has 100MB file limit)
+render_cache/
+*.mp4
+*.mkv
+*.mov
+*.webm
+episodes/*/preview.mp4
+episodes/*/final_1080x1920.mp4
+episodes/*/render_cache/
+episodes/*/_ai_*
+
+# Temporary files & logs
+scratch/
+*.log
+render_error.txt
+*.tmp
+
+# Environment variables & secrets
+.env
+.env.*
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

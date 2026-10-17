@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "ep_6735f1fb",
+  "title": "Tap 03: Minecraft Comment Chuan Mau",
+  "background": "input/background.mp4",
+  "background_info": {
+    "width": 1080,
+    "height": 1920,
+    "duration": 29.997308,
+    "has_audio": false
+  },
+  "mode": "ai_directed",
+  "approved": true,
+  "rights_confirmed": true,
+  "ai_disclosure_reviewed": true,
+  "beats": [
+    {
+      "comment": "input/comments/01_01_comment_di_dao.png",
+      "woman": "input/women/01_real_01_elegant.jpg",
+      "meme": "",
+      "emotion": "curious",
+      "caption": "",
+      "hold": 2.0,
+      "reveal": 3.5,
+      "reaction": 0
+    },
+    {
+      "comment": "input/comments/02_02_comment_gap_nguoi_yeu_cu.png",
+      "woman": "input/women/02_real_02_chic.jpg",
+      "meme": "input/memes/01_meme_sample_v3.mp4",
+      "emotion": "surprise",
+      "caption": "",
+      "hold": 1.8,
+      "reveal": 3.0,
+      "reaction": 1.5
+    },
+    {
+      "comment": "input/comments/03_04_comment_crush.png",
+      "woman": "input/women/03_real_03_white_dress.jpg",
+      "meme": "",
+      "emotion": "warm",
+      "caption": "",
+      "hold": 1.8,
+      "reveal": 3.5,
+      "reaction": 0
+    },
+    {
+      "comment": "input/comments/04_05_comment_gym.png",
+      "woman": "input/women/04_real_04_gym.jpg",
+      "meme": "input/memes/02_meme_sample_v4.mp4",
+      "emotion": "punchline",
+      "caption": "",
+      "hold": 2.0,
+      "reveal": 3.0,
+      "reaction": 2.0
+    }
+  ],
+  "music": "input/music.mp3",
+  "voice": "",
+  "note": "AI Directed: Video chuẩn mẫu Minecraft gameplay dọc, âm thanh SFX thật (Pop, Ding, Vine Boom), video meme reaction có tiếng và nhạc nền BGM."
+}

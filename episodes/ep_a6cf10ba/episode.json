@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "ep_a6cf10ba",
+  "title": "Tap 01: Di dao gap nguoi yeu cu",
+  "background": "input/background.mp4",
+  "background_info": {
+    "width": 540,
+    "height": 960,
+    "duration": 30.0,
+    "has_audio": false
+  },
+  "mode": "ai_directed",
+  "approved": true,
+  "rights_confirmed": true,
+  "ai_disclosure_reviewed": true,
+  "beats": [
+    {
+      "comment": "input/comments/01_01_comment_di_dao.png",
+      "woman": "input/women/01_01_elegant_dress.png",
+      "meme": "",
+      "emotion": "curious",
+      "caption": "Đi dạo sương sương mà lộng lẫy thế này?",
+      "hold": 2.0,
+      "reveal": 3.5,
+      "reaction": 0
+    },
+    {
+      "comment": "input/comments/02_02_comment_gap_nguoi_yeu_cu.png",
+      "woman": "input/women/05_05_fashion.png",
+      "meme": "input/memes/03_03_sigma_face.png",
+      "emotion": "surprise",
+      "caption": "Gặp người yêu cũ là tuyệt đối không được thua!",
+      "hold": 1.8,
+      "reveal": 3.2,
+      "reaction": 1.2
+    },
+    {
+      "comment": "input/comments/04_04_comment_crush.png",
+      "woman": "input/women/04_04_cute_selfie.png",
+      "meme": "",
+      "emotion": "warm",
+      "caption": "Story thế này thì tim đập 200 lần là đúng rồi!",
+      "hold": 1.8,
+      "reveal": 3.5,
+      "reaction": 0
+    },
+    {
+      "comment": "input/comments/05_05_comment_gym.png",
+      "woman": "input/women/03_03_sporty_gym.png",
+      "meme": "input/memes/01_01_bruh_moment.png",
+      "emotion": "punchline",
+      "caption": "Vào phòng gym 15 phút tập, 2 tiếng chụp ảnh!",
+      "hold": 2.0,
+      "reveal": 3.5,
+      "reaction": 1.5
+    }
+  ],
+  "music": "",
+  "voice": "",
+  "note": "AI Director: Đã ghép cặp đúng ngữ nghĩa từng comment và nhân vật. Kết thúc bằng cú chốt phòng gym hài hước."
+}

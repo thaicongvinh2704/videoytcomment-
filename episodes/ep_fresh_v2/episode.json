@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "id": "ep_fresh_v2",
+  "title": "Tập Mới: Những khoảnh khắc đốn tim triệu view",
+  "background": "input/background.mp4",
+  "background_info": {
+    "width": 1080,
+    "height": 1920,
+    "duration": 60.0,
+    "has_audio": false
+  },
+  "mode": "draft_ordered",
+  "approved": true,
+  "rights_confirmed": true,
+  "ai_disclosure_reviewed": true,
+  "beats": [
+    {
+      "comment": "input/comments/01_card_new_1.png",
+      "woman": "input/women/01_new_01_cafe_girl.jpg",
+      "meme": null,
+      "hold": 5.0,
+      "reveal": 2.0,
+      "reaction": 0.0,
+      "emotion": "curious",
+      "caption": "Đi cà phê một mình mà ăn diện xinh xắn thế này!",
+      "sfx": "meme_wow_cute.wav"
+    },
+    {
+      "comment": "input/comments/02_card_new_2.png",
+      "woman": "input/women/02_new_02_street_girl.jpg",
+      "meme": null,
+      "hold": 5.6,
+      "reveal": 2.2,
+      "reaction": 0.0,
+      "emotion": "surprise",
+      "caption": "Rủ crush đi ăn vỉa hè ai ngờ em như công chúa vi hành!",
+      "sfx": "meme_qua_ghe.wav"
+    },
+    {
+      "comment": "input/comments/03_card_new_3.png",
+      "woman": "input/women/03_new_03_gym_selfie.jpg",
+      "meme": null,
+      "hold": 5.2,
+      "reveal": 2.0,
+      "reaction": 0.0,
+      "emotion": "warm",
+      "caption": "Bảo đi tập gym mà vóc dáng làm cả phòng gym ngước nhìn!",
+      "sfx": "meme_hehehe.wav"
+    },
+    {
+      "comment": "input/comments/04_card_new_4.png",
+      "woman": "input/women/04_new_04_beach_girl.jpg",
+      "meme": null,
+      "hold": 5.4,
+      "reveal": 2.2,
+      "reaction": 0.0,
+      "emotion": "punchline",
+      "caption": "Đi biển ngắm hoàng hôn mà người ta chỉ mải nhìn em!",
+      "sfx": "meme_baby_laugh.wav"
+    }
+  ],
+  "music": "input/music.mp3",
+  "voice": "input/voice.wav",
+  "note": "AI chưa được cấu hình: thứ tự ghép là bản nháp."
+}

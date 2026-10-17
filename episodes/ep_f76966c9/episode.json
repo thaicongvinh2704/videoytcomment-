@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "id": "ep_f76966c9",
+  "title": "Gu thời trang & Phản ứng triệu view",
+  "background": "input/background.mp4",
+  "background_info": {
+    "width": 1080,
+    "height": 1920,
+    "duration": 60.0,
+    "has_audio": false
+  },
+  "mode": "draft_ordered",
+  "approved": true,
+  "rights_confirmed": true,
+  "ai_disclosure_reviewed": true,
+  "beats": [
+    {
+      "comment": "input/comments/01_card1.png",
+      "woman": "input/women/01_real_01_elegant.jpg",
+      "meme": null,
+      "hold": 3.8,
+      "reveal": 3.0,
+      "reaction": 0.0,
+      "emotion": "curious",
+      "caption": "Đi dạo thôi mà sao mặc như đi tiệc vậy?"
+    },
+    {
+      "comment": "input/comments/02_card2.png",
+      "woman": "input/women/02_real_03_white_dress.jpg",
+      "meme": "input/memes/01_meme_sample_v3.mp4",
+      "hold": 5.0,
+      "reveal": 3.0,
+      "reaction": 1.8,
+      "emotion": "surprise",
+      "caption": "Crush mặc váy trắng, tim đập 200 lần/phút!"
+    },
+    {
+      "comment": "input/comments/03_card3.png",
+      "woman": "input/women/03_real_04_gym.jpg",
+      "meme": "input/memes/02_meme_sample_v4.mp4",
+      "hold": 4.8,
+      "reveal": 3.0,
+      "reaction": 1.8,
+      "emotion": "warm",
+      "caption": "Mặc đồ gym thôi có cần xinh xuất sắc vậy không?"
+    },
+    {
+      "comment": "input/comments/04_card4.png",
+      "woman": "input/women/04_real_02_chic.jpg",
+      "meme": "input/memes/03_meme_sample_v9.mp4",
+      "hold": 4.2,
+      "reveal": 3.0,
+      "reaction": 1.8,
+      "emotion": "punchline",
+      "caption": "Phong cách đường phố chất lừ và cuốn hút!"
+    }
+  ],
+  "music": "input/music.mp3",
+  "voice": "input/voice.wav",
+  "note": "Bản chuẩn: Nền Minecraft, Bình luận Threads sắc nét, Ảnh người thực, Voiceover AI tiếng Việt chuẩn, 3 lớp âm thanh"
+}
